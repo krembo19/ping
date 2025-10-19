@@ -1,0 +1,15 @@
+name: Scheduled Website Ping
+
+on:
+  schedule:
+    # Cron schedule to run every 2 minutes
+    - cron: '*/2 * * * *'
+
+jobs:
+  ping_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping the website
+        run: |
+          curl -I https://www.sfmike.de
